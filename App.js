@@ -11,6 +11,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { Ionicons } from "@expo/vector-icons";
+import { RestaurantContextProvider } from "./src/services/restaurants/restaurants.context";
+import { LocationContextProvider } from "./src/services/location/location.context";
 
 const bottomTab = createBottomTabNavigator();
 const TAB_ICON = {
@@ -49,19 +51,27 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <bottomTab.Navigator
-            screenOptions={createScreenOption}
-            tabBarOptions={{
-              activeTintColor: "tomato",
-              inactiveTintColor: "gray",
-            }}
-          >
-            <bottomTab.Screen name="Restaurant" component={RestaurantsScreen} />
-            <bottomTab.Screen name="Map" component={map} />
-            <bottomTab.Screen name="Setting" component={setting} />
-          </bottomTab.Navigator>
-        </NavigationContainer>
+        <LocationContextProvider>
+          <RestaurantContextProvider>
+            <NavigationContainer>
+              <bottomTab.Navigator
+                screenOptions={createScreenOption}
+                tabBarOptions={{
+                  activeTintColor: "tomato",
+                  inactiveTintColor: "gray",
+                }}
+              >
+                <bottomTab.Screen
+                  name="Restaurant"
+                  component={RestaurantsScreen}
+                />
+                <bottomTab.Screen name="Map" component={map} />
+                <bottomTab.Screen name="Setting" component={setting} />
+              </bottomTab.Navigator>
+            </NavigationContainer>
+          </RestaurantContextProvider>
+        </LocationContextProvider>
+
         <ExpoStatusBar style="auto" />
       </ThemeProvider>
     </>

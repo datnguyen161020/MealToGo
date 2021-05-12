@@ -2704,7 +2704,7 @@ camelcase@^5.0.0, camelcase@^5.3.1:
 
 camelize@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmjs.org/camelize/-/camelize-1.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha1-FkpUg+Yw+kMh5a8HAg5TGDGyYJs=
 
 caniuse-lite@^1.0.30001219:
@@ -3444,6 +3444,11 @@ eslint-plugin-prettier@3.1.2:
   integrity sha512-GlolCC9y3XZfv3RQfwGew7NnuFDKsfI4lbvRK+PIIo23SFH+LemGs4cKwzAaRa+Mdb+lQO/STaIayno8T5sJJA==
   dependencies:
     prettier-linter-helpers "^1.0.0"
+
+eslint-plugin-react-hooks@^0.0.0-b8fda6cab:
+  version "0.0.0-b8fda6cab"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-0.0.0-b8fda6cab.tgz#fb9989251915b1749b88c20f1affa033a1d490af"
+  integrity sha512-ULhI3wUMuXlEK9Xf8p/4XaTU+oGIPGclfkKy3K21lE0KITGIIyAqrj1XXNIO6Lt0hFWRKQD6NwNwaX5hx3pkXg==
 
 eslint-plugin-react-hooks@^4.0.4:
   version "4.2.0"
